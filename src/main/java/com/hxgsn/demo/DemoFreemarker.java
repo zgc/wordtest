@@ -17,7 +17,7 @@ import freemarker.template.Template;
 public class DemoFreemarker {
 
 	public static void main(final String[] args) {
-		creatWord("test1");
+		creatWord();
 	}
 
 	@SuppressWarnings("deprecation")
@@ -66,7 +66,7 @@ public class DemoFreemarker {
 			cfg.setObjectWrapper(new DefaultObjectWrapper());
 
 			// 获取模板
-			final Template temp = cfg.getTemplate("test.xml");
+			final Template temp = cfg.getTemplate("test5.xml");
 			temp.setEncoding("utf-8");
 
 			// 创建数据模型
@@ -80,14 +80,14 @@ public class DemoFreemarker {
 			root.put("f", "test-f");
 			root.put("g", "test-g");
 			root.put("h", "test-h");
-			root.put("i", "test-i");
+			root.put("i", "http://www.hxgsn.com/logo.png");
 			root.put("j", "test-j");
 			root.put("k", "test-k");
 			root.put("l", "test-l");
 			root.put("m", "test-m");
 
 			// 将模板和数据模型合并生成文件
-			final File docFile = new File("src/main/resources/test.doc");
+			final File docFile = new File("src/main/resources/test5.doc");
 			final Writer docout = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(docFile)));
 			temp.process(root, docout);
 
